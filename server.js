@@ -28,11 +28,13 @@ app.post('/api/cars', (req, res) => {
     res.send('Car Submitted Successfully');
 })
 
+// Connecting express with mongodb
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost:27017/myDatabase', {
+mongoose.connect('mongodb://127.0.0.1:27017/myDatabase', {
     useNewUrlParser:true,
     useUnifiedTopology:true
 })
 .then(() => {console.log('Connection Successful')})
-.catch((error) => {console.log("Received an Error")})
+.catch((error) => {console.log("Received an Error")
+console.log(error)})
